@@ -8,23 +8,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import ca.yorku.group12.eecs4413.reservation.entity.Reservation;
+import ca.yorku.group12.eecs4413.reservation.entity.ReservationStatus;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 	
-	@Query("""
-	        SELECT r FROM Reservation r
-	        WHERE r.userId = :userId
-	          AND r.status = ca.yorku.group12.eecs4413.reservation.entity.ReservationStatus.CONFIRMED
-	        """)
-	List<Reservation> findByUserId(@Param("userId") String userId, Sort sort);
+	List<Reservation> findByUserIdOrderByStartTimeAsc(String userId);
 	
-	  @Query("""
-	            SELECT r FROM Reservation r
-	            WHERE r.machineId = :machineId
-	              AND r.status = ca.yorku.group12.eecs4413.reservation.entity.ReservationStatus.CONFIRMED
-	            """)
-	List<Reservation> findByMachineIdOrderByStartTime(@Param("machineId") int machineId, Sort sort);
+	List<Reservation> findByMachineIdAndStatusOrderByStartTimeDesc(int machineId, ReservationStatus status);
 	
 	@Query("""
 	        SELECT r FROM Reservation r

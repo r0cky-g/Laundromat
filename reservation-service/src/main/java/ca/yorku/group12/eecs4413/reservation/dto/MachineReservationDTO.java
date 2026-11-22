@@ -2,7 +2,7 @@ package ca.yorku.group12.eecs4413.reservation.dto;
 
 import java.time.OffsetDateTime;
 
-public class MachineReservationsDTO {
+public class MachineReservationDTO {
 	
 	private OffsetDateTime startTime;
 	private OffsetDateTime endTime;

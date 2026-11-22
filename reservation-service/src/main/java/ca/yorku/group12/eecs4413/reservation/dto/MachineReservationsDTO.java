@@ -5,7 +5,7 @@ import java.time.OffsetDateTime;
 public class MachineReservationsDTO {
 	
 	private OffsetDateTime startTime;
-	private OffsetDateTime endime;
+	private OffsetDateTime endTime;
 	
 	public OffsetDateTime getStartTime() {
 		return startTime;
@@ -15,11 +15,11 @@ public class MachineReservationsDTO {
 		this.startTime = startTime;
 	}
 	
-	public OffsetDateTime getEndime() {
-		return endime;
+	public OffsetDateTime getEndTime() {
+		return endTime;
 	}
 	
-	public void setEndime(OffsetDateTime endime) {
-		this.endime = endime;
+	public void setEndime(OffsetDateTime endTime) {
+		this.endTime = endTime;
 	}
 }

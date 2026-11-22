@@ -9,5 +9,4 @@ public class MachineServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MachineServiceApplication.class, args);
 	}
-
 }

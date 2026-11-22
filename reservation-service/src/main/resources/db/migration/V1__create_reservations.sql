@@ -5,6 +5,7 @@ CREATE TABLE reservations (
 
     user_id VARCHAR(20) NOT NULL,
     machine_id INT NOT NULL,
+    machine_type VARCHAR(6) NOT NULL,
 
     start_time TIMESTAMPTZ NOT NULL,
     end_time TIMESTAMPTZ NOT NULL,

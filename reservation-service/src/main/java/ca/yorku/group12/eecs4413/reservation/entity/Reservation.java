@@ -21,6 +21,9 @@ public class Reservation {
 
 	@Column(name = "machine_id", nullable = false)
 	private int machineId;
+	
+	@Column(name = "machine_type", nullable = false)
+	private String machineType;
 
     @Column(name = "start_time", nullable = false)
     private OffsetDateTime startTime;

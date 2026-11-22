@@ -1,0 +1,132 @@
+.laundry-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  margin-block: var(--space-6) var(--space-12);
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: #f1e5f6;
+  border-radius: var(--radius-xl);
+}
+
+.home .navbar,
+.home .navbar__menu {
+  background: #93b5ce;
+}
+
+.home .navbar {
+  --color-text-inverse: #263e55;
+}
+
+.home .navbar__link {
+  color: var(--color-text-inverse);
+}
+
+.home .navbar__link:hover,
+.home .navbar__link.is-active,
+.home .navbar__user {
+  background: #a9c6dc;
+}
+
+.home-content {
+  max-width: var(--max-width);
+}
+
+.home-banner {
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: #e4f2fc;
+}
+
+.home-about h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.home-about p {
+  margin-block: var(--space-3) var(--space-5);
+}
+
+.laundry-hero h1 {
+  font-family: var(--font-display);
+}
+
+.laundry-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.03;
+}
+
+.laundry-hero p {
+  max-width: 34ch;
+  margin-block: var(--space-4) var(--space-6);
+}
+
+.laundry-illustration {
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: min(100%, 20rem);
+  aspect-ratio: 1.2;
+  border-radius: 52% 48% 57% 43% / 54% 48% 52% 46%;
+  background: #ffe5cb;
+}
+
+.laundry-illustration__washer {
+  position: relative;
+  width: 49%;
+  aspect-ratio: 0.87;
+  background: linear-gradient(#fff8e9 22%, #fffefa 22%);
+  border: 3px solid #674c75;
+  border-radius: 18%;
+  box-shadow: 0.6rem 0.65rem 0 #c6acd5;
+  transform: rotate(-8deg);
+}
+
+.home .laundry-illustration__washer {
+  border-color: #405b78;
+  box-shadow: 0.6rem 0.65rem 0 #a9c7e1;
+}
+
+.laundry-illustration__washer::before {
+  position: absolute;
+  inset: 31% 15% 12%;
+  content: "";
+  border: 3px solid #674c75;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 64% 25%, #fff9f0 0 6%, transparent 7%),
+    radial-gradient(circle at 73% 44%, #fff9f0 0 4%, transparent 5%),
+    radial-gradient(ellipse at 40% 100%, #c7a7dd 0 47%, #e4d4f2 49%);
+}
+
+.home .laundry-illustration__washer::before {
+  border-color: #405b78;
+  background:
+    radial-gradient(circle at 64% 25%, #fff9f0 0 6%, transparent 7%),
+    radial-gradient(circle at 73% 44%, #fff9f0 0 4%, transparent 5%),
+    radial-gradient(ellipse at 40% 100%, #9ec7e8 0 47%, #d7ebfa 49%);
+}
+
+.laundry-illustration__washer::after {
+  position: absolute;
+  top: 8%;
+  right: 13%;
+  width: 9%;
+  aspect-ratio: 1;
+  content: "";
+  border-radius: 50%;
+  background: #674c75;
+  box-shadow: -1.15em 0 #e3a88b;
+}
+
+@media (max-width: 640px) {
+  .laundry-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .laundry-illustration {
+    width: min(100%, 13rem);
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up — Absolute Laundry</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/account.css">
+</head>
+<body class="page-wrapper">
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-main">
+    <div class="container account-page">
+      <section class="card account-card" aria-labelledby="register-title">
+        <div class="card__header account-card__header">
+          <h1 id="register-title">Sign up</h1>
+        </div>
+        <form class="card__body" method="post">
+          <div class="form-group">
+            <label class="form-label" for="name">Full name</label>
+            <input class="form-input" id="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email address</label>
+            <input class="form-input" id="email" type="email" autocomplete="username" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-input" id="password" type="password" autocomplete="new-password" required>
+          </div>
+          <button class="btn btn--primary btn--full account-card__submit" type="submit" disabled>Sign up</button>
+        </form>
+        <div class="card__footer text-sm">
+          <p>Already have an account? <a class="account-card__link" href="./login.html">Log in</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

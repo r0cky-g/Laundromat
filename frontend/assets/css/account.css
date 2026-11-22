@@ -1,0 +1,26 @@
+.account-page {
+  padding-top: var(--space-10);
+}
+
+.account-card {
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.account-card__header {
+  background: #e4f2fc;
+}
+
+.account-card__header h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+}
+
+.account-card__submit {
+  margin-block: var(--space-6) var(--space-3);
+}
+
+.account-card__link {
+  color: var(--color-accent);
+  text-decoration: underline;
+}

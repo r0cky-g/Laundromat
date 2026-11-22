@@ -1,0 +1,39 @@
+<!-- Shared navbar loaded by components.js -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar__inner">
+
+    <!-- Site name -->
+    <a href="/index.html" class="navbar__brand">
+      🫧 Absolute Laundry
+    </a>
+
+    <div class="navbar__menu">
+      <!-- Links for logged-in users -->
+      <ul class="navbar__nav" id="nav-links" hidden>
+        <li><a href="/pages/dashboard.html" class="navbar__link" data-nav="dashboard">Dashboard</a></li>
+        <li><a href="/pages/machines.html" class="navbar__link" data-nav="machines">Machines</a></li>
+        <li><a href="/pages/reservations.html" class="navbar__link" data-nav="reservations">Reservations</a></li>
+        <li><a href="/pages/payments.html" class="navbar__link" data-nav="payments">Payments</a></li>
+      </ul>
+
+      <!-- login/Register Buttons -->
+      <div class="navbar__actions" id="nav-actions">
+        <div id="nav-guest">
+          <a href="/pages/login.html" class="btn btn--ghost btn--sm">Log in</a>
+          <a href="/pages/register.html" class="btn btn--secondary btn--sm">Sign up</a>
+        </div>
+
+        <!-- Show these after login -->
+        <div id="nav-user" hidden>
+          <div class="navbar__user" id="nav-user-chip">
+            <div class="navbar__avatar" id="nav-avatar">?</div>
+            <span id="nav-username">User</span>
+          </div>
+          <button class="btn btn--ghost btn--sm" onclick="auth.logout()">
+            Log out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

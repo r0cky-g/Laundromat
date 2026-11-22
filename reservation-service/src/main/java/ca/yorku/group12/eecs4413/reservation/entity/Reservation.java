@@ -1,8 +1,14 @@
 package ca.yorku.group12.eecs4413.reservation.entity;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.type.PostgreSQLEnumJdbcType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,12 +24,22 @@ public class Reservation {
 
 	@Column(name = "user_id", nullable = false)
 	private String userId;
-
+	
 	@Column(name = "machine_id", nullable = false)
 	private int machineId;
 	
-	@Column(name = "machine_type", nullable = false)
-	private String machineType;
+	@Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
+    @Column(name = "machine_type", nullable = false, columnDefinition = "machine_type")
+	private MachineType machineType;
+	
+	@Column(name = "cost", nullable = false, precision = 10, scale = 2)
+	private BigDecimal cost;
+	
+	@Enumerated(EnumType.STRING)
+	@JdbcType(PostgreSQLEnumJdbcType.class)
+	@Column(name = "status", nullable = false, columnDefinition = "reservation_status")
+	private ReservationStatus status;
 
     @Column(name = "start_time", nullable = false)
     private OffsetDateTime startTime;
@@ -56,6 +72,30 @@ public class Reservation {
 
 	public void setMachineId(int machineId) {
 		this.machineId = machineId;
+	}
+
+	public MachineType getMachineType() {
+		return machineType;
+	}
+
+	public void setMachineType(MachineType machineType) {
+		this.machineType = machineType;
+	}
+
+	public BigDecimal getCost() {
+		return cost;
+	}
+
+	public void setCost(BigDecimal cost) {
+		this.cost = cost;
+	}
+
+	public ReservationStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ReservationStatus status) {
+		this.status = status;
 	}
 
 	public OffsetDateTime getStartTime() {

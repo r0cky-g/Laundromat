@@ -19,7 +19,7 @@ public class MachineReservationsDTO {
 		return endTime;
 	}
 	
-	public void setEndime(OffsetDateTime endTime) {
+	public void setEndTime(OffsetDateTime endTime) {
 		this.endTime = endTime;
 	}
 }

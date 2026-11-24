@@ -21,7 +21,7 @@ public class ReservationService {
 		this.reserveMap = reserveMap;
 	}
 	
-	public List<MachineReservationDTO> getConfirmedReservationsByMachine(int machineId) {
+	public List<MachineReservationDTO> getMachineSchedule(int machineId) {
 		List<Reservation> reservations = reserveRepo.findByMachineIdAndStatusOrderByStartTimeDesc(machineId, ReservationStatus.CONFIRMED);
 
 		return reserveMap.machineReservetoDtoList(reservations);

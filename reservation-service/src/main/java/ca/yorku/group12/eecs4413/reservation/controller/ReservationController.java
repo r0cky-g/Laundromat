@@ -21,9 +21,9 @@ public class ReservationController {
 		this.reserveService = reserveService;
 	}
 
-	@GetMapping("/machine/{machineId}")
-	public ResponseEntity<List<MachineReservationDTO>> getReservationsByMachine(@PathVariable @Min(1) int machineId) {
-		return ResponseEntity.ok(reserveService.getConfirmedReservationsByMachine(machineId));
+	@GetMapping("/machine/{machineId}/schedule")
+	public ResponseEntity<List<MachineReservationDTO>> getMachineSchedule(@PathVariable @Min(1) int machineId) {
+		return ResponseEntity.ok(reserveService.getMachineSchedule(machineId));
 	}
 	
 }

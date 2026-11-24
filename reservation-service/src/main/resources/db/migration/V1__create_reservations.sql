@@ -28,11 +28,8 @@ CREATE TABLE reservations (
         WHERE (status IN ('PENDING_PAYMENT', 'CONFIRMED'))
 );
 	
-CREATE INDEX idx_reservations_user_start
-    ON reservations (user_id, start_time DESC);
+CREATE INDEX idx_reservations_user_status_start
+    ON reservations (user_id, status, start_time DESC);
 
-CREATE INDEX idx_reservations_machine_start
-    ON reservations (machine_id, start_time DESC);
-
-CREATE INDEX idx_reservations_status_start
-    ON reservations (status, start_time DESC);
+CREATE INDEX idx_reservations_machine_status_start
+    ON reservations (machine_id, status, start_time DESC);

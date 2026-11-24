@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS btree_gist;
 
 CREATE TYPE machine_type AS ENUM ('WASHER', 'DRYER');
-CREATE TYPE reservation_status AS ENUM ('PENDING_PAYMENT', 'CONFIRMED');
+CREATE TYPE reservation_status AS ENUM ('PENDING_PAYMENT', 'CONFIRMED', 'CANCELLED', 'FINISHED');
 
 CREATE TABLE reservations (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -25,12 +25,14 @@ CREATE TABLE reservations (
             machine_id WITH =,
             tstzrange(start_time, end_time, '[)') WITH &&
         )
+        WHERE (status IN ('PENDING_PAYMENT', 'CONFIRMED'))
 );
+	
+CREATE INDEX idx_reservations_user_start
+    ON reservations (user_id, start_time DESC);
 
-CREATE INDEX idx_reservations_user_confirmed
-    ON reservations (user_id, start_time)
-    WHERE status = 'CONFIRMED';
-    
-CREATE INDEX idx_reservations_machine_confirmed
-    ON reservations (machine_id, start_time)
-    WHERE status = 'CONFIRMED';
+CREATE INDEX idx_reservations_machine_start
+    ON reservations (machine_id, start_time DESC);
+
+CREATE INDEX idx_reservations_status_start
+    ON reservations (status, start_time DESC);

@@ -1,4 +1,4 @@
-/* Styles for buttons, forms, cards and other shared components. */
+/* Styles shared by buttons, cards and forms */
 
 /* Buttons */
 .btn {
@@ -226,7 +226,7 @@
 .badge--error    { background: var(--color-error-bg);      color: var(--color-error); }
 .badge--info     { background: var(--color-info-bg);       color: var(--color-info); }
 
-/* Toast notifications */
+/* Popup messages */
 .toast-container {
   position: fixed;
   bottom: var(--space-6);

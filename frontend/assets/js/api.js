@@ -1,4 +1,4 @@
-// Send requests to the backend. Change BASE_URL if the backend address changes.
+// Change BASE_URL if the backend moves
 
 const BASE_URL = 'http://localhost:8080';
 
@@ -17,7 +17,7 @@ async function apiFetch(path, options = {}) {
     headers,
   });
 
-  // A 204 response has no JSON to read
+  // There is no response body for a 204
   if (response.status === 204) return null;
 
   let data;
@@ -37,7 +37,7 @@ async function apiFetch(path, options = {}) {
   return data;
 }
 
-// Shortcuts for common HTTP methods.
+// Helpers for GET, POST and other requests
 const api = {
   get:    (path, opts = {})       => apiFetch(path, { ...opts, method: 'GET' }),
   post:   (path, body, opts = {}) => apiFetch(path, { ...opts, method: 'POST',  body: JSON.stringify(body) }),
@@ -46,7 +46,7 @@ const api = {
   delete: (path, opts = {})       => apiFetch(path, { ...opts, method: 'DELETE' }),
 };
 
-// Keep the response status and error details.
+// Save the error status and details
 class ApiError extends Error {
   constructor(message, status, data) {
     super(message);
@@ -61,6 +61,6 @@ function getStoredToken() {
   return localStorage.getItem('auth_token');
 }
 
-// Let pages call api.get() and api.post()
+// Let other pages use the API helpers
 window.api      = api;
 window.ApiError = ApiError;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machines — Absolute Laundry</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/machines.css">
+</head>
+<body class="page-wrapper">
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-main">
+    <div class="container">
+      <header class="page-header machines-header">
+        <div>
+          <h1 class="page-header__title">Find a machine</h1>
+          <p class="page-header__subtitle" id="machine-feed" role="status">Loading machine statuses…</p>
+        </div>
+        <button type="button" class="btn btn--secondary" id="refresh-machines">Refresh statuses</button>
+      </header>
+
+      <section class="machine-section" aria-labelledby="washer-heading">
+        <h2 id="washer-heading">Washers</h2>
+        <ul class="machine-grid" id="washers"></ul>
+        <p id="washers-empty" hidden>No washers listed.</p>
+      </section>
+
+      <section class="machine-section" aria-labelledby="dryer-heading">
+        <h2 id="dryer-heading">Dryers</h2>
+        <ul class="machine-grid" id="dryers"></ul>
+        <p id="dryers-empty" hidden>No dryers listed.</p>
+      </section>
+    </div>
+  </main>
+
+  <template id="machine-card">
+    <li class="card machine-card">
+      <span class="machine-icon" aria-hidden="true"></span>
+      <h3 class="card__title"></h3>
+      <span class="badge"></span>
+    </li>
+  </template>
+
+  <div id="footer-placeholder"></div>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/machines.js"></script>
+</body>
+</html>

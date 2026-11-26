@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications — Absolute Laundry</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/notifications.css">
+</head>
+<body class="page-wrapper">
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-main">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-header__title">Notifications</h1>
+      </header>
+
+      <ul class="notification-list">
+        <li class="card">
+          <details>
+            <summary>
+              <span class="card__title">Laundry cycle complete</span>
+              <span class="badge badge--warning">Email pending</span>
+              <time datetime="2026-11-25T15:00:00-05:00">Nov 25, 2026 at 3:00 PM</time>
+            </summary>
+            <p class="card__body">Washer 03 has finished its cycle. Your laundry is ready to pick up.</p>
+          </details>
+        </li>
+        <li class="card">
+          <details>
+            <summary>
+              <span class="card__title">Reservation confirmed</span>
+              <span class="badge badge--success">Email sent</span>
+              <time datetime="2026-11-25T12:30:00-05:00">Nov 25, 2026 at 12:30 PM</time>
+            </summary>
+            <p class="card__body">Your reservation for Washer 03 on Nov 25 from 2:00 to 3:00 PM is confirmed.</p>
+          </details>
+        </li>
+        <li class="card">
+          <details>
+            <summary>
+              <span class="card__title">Reservation cancelled</span>
+              <span class="badge badge--error">Email failed to send</span>
+              <time datetime="2026-11-24T10:45:00-05:00">Nov 24, 2026 at 10:45 AM</time>
+            </summary>
+            <p class="card__body">Your reservation for Dryer 02 on Nov 24 was cancelled.</p>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.machines-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.machine-section + .machine-section {
+  margin-top: var(--space-8);
+}
+
+.machine-section h2 {
+  font-family: var(--font-display);
+  margin-bottom: var(--space-4);
+}
+
+.machine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
+  gap: var(--space-4);
+}
+
+.machine-card {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-3);
+}
+
+.machine-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 3rem;
+  color: #405b78;
+  background: #e4f2fc;
+  border: 2px solid currentColor;
+  border-radius: var(--radius-sm);
+}
+
+.machine-icon::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: var(--space-1);
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.machine-icon--dryer {
+  background: #fff0de;
+}

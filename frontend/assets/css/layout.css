@@ -108,7 +108,7 @@
   margin-left: auto;
 }
 
-/* Signed-in user badge */
+/* Name and avatar after login */
 .navbar__user {
   display: flex;
   align-items: center;
@@ -204,22 +204,31 @@
   padding-block: var(--space-10);
 }
 
-.section + .section {
+.section+.section {
   border-top: 1px solid var(--color-border);
 }
 
-/* Grid helpers */
+/* Grid layout */
 .grid {
   display: grid;
   gap: var(--space-6);
 }
 
-.grid--2 { grid-template-columns: repeat(2, 1fr); }
-.grid--3 { grid-template-columns: repeat(3, 1fr); }
-.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
 
-/* Styles for smaller screens */
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Layout for narrow windows */
 @media (max-width: 900px) {
+
   .navbar__inner,
   .navbar__menu,
   .navbar__nav {

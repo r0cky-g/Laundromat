@@ -1,4 +1,4 @@
-<!-- Shared navbar loaded by components.js -->
+<!-- Navbar for all pages -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar__inner">
 
@@ -8,15 +8,16 @@
     </a>
 
     <div class="navbar__menu">
-      <!-- Links for logged-in users -->
+      <!-- Links shown after login -->
       <ul class="navbar__nav" id="nav-links" hidden>
         <li><a href="/pages/dashboard.html" class="navbar__link" data-nav="dashboard">Dashboard</a></li>
         <li><a href="/pages/machines.html" class="navbar__link" data-nav="machines">Machines</a></li>
         <li><a href="/pages/reservations.html" class="navbar__link" data-nav="reservations">Reservations</a></li>
         <li><a href="/pages/payments.html" class="navbar__link" data-nav="payments">Payments</a></li>
+        <li><a href="/pages/notifications.html" class="navbar__link" data-nav="notifications">Notifications</a></li>
       </ul>
 
-      <!-- login/Register Buttons -->
+      <!-- Login and sign-up buttons -->
       <div class="navbar__actions" id="nav-actions">
         <div id="nav-guest">
           <a href="/pages/login.html" class="btn btn--ghost btn--sm">Log in</a>

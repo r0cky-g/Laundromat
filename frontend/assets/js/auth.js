@@ -15,18 +15,18 @@ function setToken(token) {
   localStorage.setItem(TOKEN_KEY, token);
 }
 
-// Read the saved user or get their details from the token.
+// Use the saved user details first
 function getUser() {
   const stored = localStorage.getItem(USER_KEY);
   if (stored) {
     try {
       return JSON.parse(stored);
     } catch {
-      // Try reading the token if the saved user is invalid.
+      // Try the token if the saved user data is invalid
     }
   }
 
-  // Read the user details from the token if needed
+  // Get the user details from the token
   const token = getToken();
   if (!token) return null;
   try {
@@ -52,14 +52,14 @@ function isLoggedIn() {
   return !!getToken();
 }
 
-// Clear the login details and go to the login page by default.
+// Clear the saved login details and redirect
 function logout(redirectTo = new URL('login.html', authPages)) {
   localStorage.removeItem(TOKEN_KEY);
   localStorage.removeItem(USER_KEY);
   window.location.href = redirectTo;
 }
 
-// Send guests to login and remember where they were going.
+// Send guests to login and save the page they wanted
 function requireAuth() {
   if (!isLoggedIn()) {
     const next = encodeURIComponent(window.location.pathname + window.location.search);
@@ -67,12 +67,12 @@ function requireAuth() {
   }
 }
 
-// Send logged-in users away from the login or sign-up page.
+// Send signed-in users to the dashboard
 function requireGuest() {
   if (isLoggedIn()) {
     window.location.href = new URL('dashboard.html', authPages);
   }
 }
 
-// Make this available to other pages
+// Let other pages use these functions
 window.auth = { getToken, setToken, getUser, setUser, isLoggedIn, logout, requireAuth, requireGuest };

@@ -1,4 +1,4 @@
-// Load the shared navbar and footer when the page is ready.
+// Load the navbar and footer
 
 const componentSiteRoot = new URL('../../', document.currentScript.src);
 
@@ -44,7 +44,7 @@ async function loadFooter() {
   }
 }
 
-// Show the right links for guests or logged-in users.
+// Choose which links to show after checking login
 function _applyAuthState() {
   const guestEl    = document.getElementById('nav-guest');
   const userEl     = document.getElementById('nav-user');
@@ -67,7 +67,7 @@ function _applyAuthState() {
   }
 }
 
-// Highlight the link for the current page.
+// Highlight the current page in the navbar
 function _markActiveLink() {
   const currentPath = window.location.pathname;
   document.querySelectorAll('.navbar__link[data-nav]').forEach(link => {
@@ -85,7 +85,7 @@ function _initials(str = '') {
   return str.slice(0, 2).toUpperCase();
 }
 
-// Show a popup message. Set duration to 0 to keep it open until dismissed.
+// Show a popup that stays open if duration is 0
 function showToast(message, type = 'info', duration = 4000, title = '') {
   let container = document.getElementById('toast-container');
   if (!container) {
@@ -111,7 +111,7 @@ function showToast(message, type = 'info', duration = 4000, title = '') {
 
   container.appendChild(toast);
 
-  // Wait for the toast to render before fading it in
+  // Draw the popup before starting the fade-in
   requestAnimationFrame(() => {
     requestAnimationFrame(() => toast.classList.add('is-visible'));
   });
@@ -125,9 +125,9 @@ function showToast(message, type = 'info', duration = 4000, title = '') {
   if (duration > 0) setTimeout(dismiss, duration);
 }
 
-// Make this available to other pages
+// Let other pages use these functions
 window.loadComponents = loadComponents;
 window.showToast      = showToast;
 
-// Load the shared components once the page is ready
+// Start loading the navbar and footer
 document.addEventListener('DOMContentLoaded', loadComponents);
